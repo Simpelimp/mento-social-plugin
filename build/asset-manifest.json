@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.js": "/static/js/main.mento.js",
+    "main.css": "/static/css/main.4a52cdb4.css",
+    "static/js/289.73fa1e0c.chunk.js": "/static/js/289.73fa1e0c.chunk.js",
+    "index.html": "/index.html",
+    "main.mento.js.map": "/static/js/main.mento.js.map",
+    "main.4a52cdb4.css.map": "/static/css/main.4a52cdb4.css.map",
+    "289.73fa1e0c.chunk.js.map": "/static/js/289.73fa1e0c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.mento.js",
+    "static/css/main.4a52cdb4.css"
+  ]
+}
