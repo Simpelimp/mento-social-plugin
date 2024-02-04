@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './index.css';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// Create a new div element
+const appElement = document.createElement('div');
+
+// Optionally, add an ID or class for styling or identification
+appElement.id = 'mento-plugin';
+
+// Append the new element to the body
+document.body.appendChild(appElement);
+
+// Create a root and render the React app inside the new element
+const root = ReactDOM.createRoot(appElement);
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
