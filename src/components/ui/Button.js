@@ -5,6 +5,7 @@ export const Button = ({ onClick, text }) => {
     onClick={onClick}
     style={{
       borderRadius: '16px',
+      borderWidth: '1px',
       borderColor: PRIMARY_COLOR,
       backgroundColor: 'white',
       color: PRIMARY_COLOR,

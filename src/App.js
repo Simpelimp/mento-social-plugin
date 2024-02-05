@@ -78,7 +78,7 @@ function App() {
       { activeQuestion && (<div style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 2000, fontFamily: 'Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif', fontSize: 'small' }}>
         <div onClick={() => setDisplayBox(!displayBox)} style={{ backgroundColor: '#223C8E', width: `${iconSize}px`, height: `${iconSize}px`, borderRadius: '50px' }}></div>
         <FadeIn visible={displayBox}>
-          <div style={{ position: 'absolute', backgroundColor: 'white', height: `auto`, width: `${windowWidth}px`, bottom: `${iconSize + 10}px`, left: `-${windowWidth - (iconSize + 10)}px`, boxSizing: 'border-box', padding: '8px', borderRadius: '16px' }}>
+          <div style={{ position: 'absolute', backgroundColor: 'white', height: `auto`, width: `${windowWidth}px`, bottom: `${iconSize + 10}px`, left: `-${windowWidth - (iconSize + 10)}px`, boxSizing: 'border-box', padding: '8px', boxShadow: '0px 0px 10px -5px black', borderRadius: '8px' }}>
             <MainContentBox question={activeQuestion} refreshQuestion={fetchQuestionFromCurrentURL}></MainContentBox>
           </div>
         </FadeIn>
