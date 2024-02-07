@@ -57,7 +57,7 @@ function App() {
           related:related_questions!question_id(id, questions!target_question_id(id,title,panels(id,image_url),answers(id,user_id),answer_options!question_id(id, answer_title, image_url, answers(id))))
         `
       )
-      .like("link_url", formattedUrl)
+      // .like("link_url", formattedUrl)
       // .eq('panels.id', '4f95d0b9-9156-4c00-a485-f92f5d8d0055')
 
     if (window.mentoPanelId) {
@@ -76,7 +76,9 @@ function App() {
   
   return <FadeIn delay={200} visible={activeQuestion}>
       { activeQuestion && (<div style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 2000, fontFamily: 'Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif', fontSize: 'small' }}>
-        <div onClick={() => setDisplayBox(!displayBox)} style={{ backgroundColor: '#223C8E', width: `${iconSize}px`, height: `${iconSize}px`, borderRadius: '50px' }}></div>
+        <div onClick={() => setDisplayBox(!displayBox)} style={{ backgroundColor: '#223C8E', width: `${iconSize}px`, height: `${iconSize}px`, borderRadius: '50px' }}>
+          <img src="https://gyrstiqzamltthbjartl.supabase.co/storage/v1/object/public/website/widget-icon.png?t=2024-02-07T07%3A38%3A31.642Z" alt="Widget Icon" style={{ width: '100%', height: '100%' }} />
+        </div>
         <FadeIn visible={displayBox}>
           <div style={{ position: 'absolute', backgroundColor: 'white', height: `auto`, width: `${windowWidth}px`, bottom: `${iconSize + 10}px`, left: `-${windowWidth - (iconSize + 10)}px`, boxSizing: 'border-box', padding: '8px', boxShadow: '0px 0px 10px -5px black', borderRadius: '8px' }}>
             <MainContentBox question={activeQuestion} refreshQuestion={fetchQuestionFromCurrentURL}></MainContentBox>
