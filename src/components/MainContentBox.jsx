@@ -16,6 +16,7 @@ export const MainContentBox = ({ question, refreshQuestion }) => {
   }, [question])
   
   return <div>
+    {/* Todo: Add cross */}
     <div style={{ marginBottom: '8px', marginTop: '8px' }}>
       <span style={{ fontSize: 'medium' }}>{ question.title }</span>
     </div>

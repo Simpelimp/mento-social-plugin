@@ -57,8 +57,7 @@ function App() {
           related:related_questions!question_id(id, questions!target_question_id(id,title,panels(id,image_url),answers(id,user_id),answer_options!question_id(id, answer_title, image_url, answers(id))))
         `
       )
-      // .like("link_url", formattedUrl)
-      // .eq('panels.id', '4f95d0b9-9156-4c00-a485-f92f5d8d0055')
+      .like("link_url", formattedUrl)
 
     if (window.mentoPanelId) {
       query.eq('panels.id', window.mentoPanelId);
