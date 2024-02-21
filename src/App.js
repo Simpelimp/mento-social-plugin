@@ -49,7 +49,7 @@ function App() {
           path,
           link_url,
           vote_end_date,
-          panels(id, name),
+          panel_id,
           profiles(id, username, avatar_url, verified, followers:user_relationships!target_user_id(id)),
           answers(id, user_id, answer_option_id),
           tags:question_tags(tags(id, name)),
@@ -57,10 +57,10 @@ function App() {
           related:related_questions!question_id(id, questions!target_question_id(id,title,panels(id,image_url),answers(id,user_id),answer_options!question_id(id, answer_title, image_url, answers(id))))
         `
       )
-      .like("link_url", formattedUrl)
+      .like("link_url", `%${formattedUrl}%`)
 
     if (window.mentoPanelId) {
-      query.eq('panels.id', window.mentoPanelId);
+      query.eq('panel_id', window.mentoPanelId);
     }
       
     const { data, statusText, error } = await query;
