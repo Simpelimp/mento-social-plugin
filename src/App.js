@@ -76,7 +76,14 @@ function App() {
   return <FadeIn delay={200} visible={activeQuestion}>
       { activeQuestion && (<div style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 2000, fontFamily: 'Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif', fontSize: 'small' }}>
         <div onClick={() => setDisplayBox(!displayBox)} style={{ backgroundColor: '#223C8E', width: `${iconSize}px`, height: `${iconSize}px`, borderRadius: '50px' }}>
-          <img src="https://gyrstiqzamltthbjartl.supabase.co/storage/v1/object/public/website/widget-icon.png?t=2024-02-07T07%3A38%3A31.642Z" alt="Widget Icon" style={{ width: '100%', height: '100%' }} />
+          <FadeIn delay={50} visible={!displayBox}>
+            <img src="https://gyrstiqzamltthbjartl.supabase.co/storage/v1/object/public/website/widget-icon.png?t=2024-02-07T07%3A38%3A31.642Z" alt="Widget Icon" style={{ width: '100%', height: '100%' }} />
+          </FadeIn>
+          <FadeIn delay={50} visible={displayBox}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', position: 'relative', top: '-50px' }}>
+              <span style={{ color: 'white', textAlign: 'center' }}>Close</span>
+            </div>
+          </FadeIn>
         </div>
         <FadeIn visible={displayBox}>
           <div style={{ position: 'absolute', backgroundColor: 'white', height: `auto`, width: `${windowWidth}px`, bottom: `${iconSize + 10}px`, left: `-${windowWidth - (iconSize + 10)}px`, boxSizing: 'border-box', padding: '8px', boxShadow: '0px 0px 10px -5px black', borderRadius: '8px' }}>
