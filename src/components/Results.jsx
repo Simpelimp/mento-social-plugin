@@ -2,15 +2,6 @@ import FadeIn from "react-fade-in/lib/FadeIn";
 import { formatAnswerOptions } from "../utils/formatAnswerOptions";
 import { PRIMARY_COLOR } from "../utils/theme";
 
-const data = [
-  { label: '7-8', value: 41, count: 185 },
-  { label: '8-9', value: 28, count: 152 },
-  { label: '6-7', value: 19, count: 112 },
-  { label: 'Över 8', value: 7, count: 112 },
-  { label: '5-6', value: 4, count: 112 },
-  { label: 'Under 5', value: 1, count: 112 },
-];
-
 export const Results = ({ question, answerOptionId }) => {
 
   const items = formatAnswerOptions(

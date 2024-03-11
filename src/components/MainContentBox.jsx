@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Results } from "./Results";
 import { AnswerQuestion } from "./AnswerQuestion";
 import { getLocalStorageItem } from "../utils/localstorage";
+import { PanelQuestions } from "./PanelQuestions";
 
 export const MainContentBox = ({ question, refreshQuestion }) => {
   const [selectedAnswerOption, setSelectedAnswerOption] = useState(null);
@@ -20,6 +21,11 @@ export const MainContentBox = ({ question, refreshQuestion }) => {
     <div style={{ marginBottom: '8px', marginTop: '8px' }}>
       <span style={{ fontSize: 'medium' }}>{ question.title }</span>
     </div>
-    { selectedAnswerOption ? <Results question={question} answerOptionId={selectedAnswerOption}></Results> : <AnswerQuestion onClick={(ao) => setSelectedAnswerOption(ao)} question={question} handleAnswer={refreshQuestion}></AnswerQuestion>}
+    { selectedAnswerOption ? 
+      <div>
+        <Results question={question} answerOptionId={selectedAnswerOption}></Results>
+        <PanelQuestions></PanelQuestions>
+      </div> : <AnswerQuestion onClick={(ao) => setSelectedAnswerOption(ao)} question={question} handleAnswer={refreshQuestion}></AnswerQuestion>
+    }
   </div>
 }
