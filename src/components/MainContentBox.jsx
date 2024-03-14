@@ -24,7 +24,7 @@ export const MainContentBox = ({ question, refreshQuestion }) => {
     { selectedAnswerOption ? 
       <div>
         <Results question={question} answerOptionId={selectedAnswerOption}></Results>
-        <PanelQuestions></PanelQuestions>
+        <PanelQuestions panelId={question.panelId} questionId={question.id}></PanelQuestions>
       </div> : <AnswerQuestion onClick={(ao) => setSelectedAnswerOption(ao)} question={question} handleAnswer={refreshQuestion}></AnswerQuestion>
     }
   </div>
